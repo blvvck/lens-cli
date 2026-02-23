@@ -1,0 +1,42 @@
+name = "lens-feedback-worker"
+main = "src/index.ts"
+compatibility_date = "2024-08-15"
+
+# The project API host. A custom domain creates the DNS record and
+# certificate on deploy, so the worker answers on api.lenscli.com.
+routes = [
+  { pattern = "api.lenscli.com", custom_domain = true }
+]
+
+# D1 Database for feedback storage
+[[d1_databases]]
+binding = "DB"
+database_name = "feedback-db"
+database_id = "e8f226d5-c90d-4c87-a3d0-4336c07a1486"
+
+# Optional: KV for distributed rate limiting
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "__PLACEHOLDER__"
+
+# Secrets (set via wrangler secret)
+# FEEDBACK_SECRET = ""  # For internal auth if needed
+# FEEDBACK_FANOUT_WEBHOOK_URL = ""  # Single team-owned outbound webhook destination
+# FEEDBACK_FANOUT_TIMEOUT_MS = "3000"  # Optional timeout override in milliseconds
+
+[vars]
+# Environment variables
+ENVIRONMENT = "production"
+
+# Local development settings
+[env.dev]
+name = "lens-feedback-worker-dev"
+
+[[env.dev.d1_databases]]
+binding = "DB"
+database_name = "feedback-db-dev"
+database_id = "local"  # Uses local SQLite for development
+
+# Miniflare settings for local dev
+[miniflare]
+port = 8787

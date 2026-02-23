@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Syncthing-backed hot Claude/project control-plane files.
+AGENTS.md
+CLAUDE.md
+
+# Project control plane is local only: never tracked, never pushed.
+.claude/
+
+# Test coverage
+coverage/
+.playwright-mcp/
+FEATURE_COMPARISON.md

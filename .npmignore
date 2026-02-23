@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+src/
+docs/
+.github/
+*.md
+!README.md
+!skills/
+!skills/README.md
+!skills/lens/
+!skills/lens/SKILL.md

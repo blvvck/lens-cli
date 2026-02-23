@@ -1,0 +1,5 @@
+# Local env and Claude operating state
+.env symlink required
+.claude symlink optional
+AGENTS.md symlink optional
+CLAUDE.md symlink optional
