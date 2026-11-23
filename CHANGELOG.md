@@ -2,7 +2,7 @@
 
 Notable changes to Lens are recorded here.
 
-## [Unreleased]
+## [1.0.1] - 2026-11-23
 
 ### Added
 
@@ -13,5 +13,3 @@ Notable changes to Lens are recorded here.
 - Verification tooling: visual diff, DOM diff, and screenshot bisect.
 - Headless mode, request interception through `serve`, named flows, and a socket API.
 - A supported client for the host socket (`@lens-cli/lens/client`).
-
-### Changed
